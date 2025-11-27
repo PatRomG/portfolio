@@ -1,0 +1,600 @@
+/* ============================================
+   VARIABLES CSS COMUNES - Patricia Romero
+   Para usar en todos los archivos CSS
+   ============================================ */
+
+:root {
+    /* Colores modo claro */
+    --text-color: #000000;
+    --text-shadow-light: rgba(255, 192, 203, 0.6);
+    --bg-gradient-start: #F8E1D9;
+    --bg-gradient-end: #E9C1B3;
+    --accent-color: #A98181;
+    --footer-bg: #F8E1D9;
+    --footer-text: #000000;
+    --dropdown-bg: #FFD3C4;
+    --dropdown-border: #A98181;
+    --section-bg: rgba(255, 211, 196, 0.2);
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --card-border: #A98181;
+    --form-bg: rgba(255, 211, 196, 0.3);
+    --input-bg: #FFFFFF;
+    --input-border: #A98181;
+    
+    /* Transiciones unificadas */
+    --transition-speed: 0.3s;
+    --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Espaciado y dimensiones */
+    --border-radius: 8px;
+    --footer-height: 70px;
+}
+
+/* Tema oscuro */
+:root.dark-theme {
+    --text-color: #FFFFFF;
+    --text-shadow-light: rgba(0, 255, 255, 0.4);
+    --bg-gradient-start: #071E26;
+    --bg-gradient-end: #163E4C;
+    --accent-color: #4A7C8C;
+    --footer-bg: #0A2A35;
+    --footer-text: #FFFFFF;
+    --dropdown-bg: #163E4C;
+    --dropdown-border: #4A7C8C;
+    --section-bg: rgba(22, 62, 76, 0.2);
+    --card-bg: rgba(10, 42, 53, 0.7);
+    --card-border: #4A7C8C;
+    --form-bg: rgba(22, 62, 76, 0.3);
+    --input-bg: #0A2A35;
+    --input-border: #4A7C8C;
+}
+
+/* ============================================
+   ESTILOS COMUNES PARA TODAS LAS PÁGINAS
+   ============================================ */
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} /* Selector universal */
+
+
+/* HEADER - CONTROLES SUPERIORES */
+.top-controls {
+    position: fixed;
+    top: 2%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 0 2%;
+}
+
+.control-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform var(--transition-speed) ease, 
+                opacity var(--transition-speed) ease;
+    margin-right: 20px;
+}
+
+#languageMode {
+    width: 50px;
+    height: 50px;
+}
+
+.control-icon:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.linkedin-icon {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* MENÚ DE IDIOMAS */
+.language-dropdown {
+    position: absolute;
+    top: 50px;
+    left: 80px;
+    background: var(--dropdown-bg);
+    border: 2px solid var(--dropdown-border);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1100;
+    min-width: 180px;
+
+    /* Oculto por defecto - no usar display pq si no, no aparece la animacion*/
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none; /* Evita interacciones cuando está oculto */
+    transform: translateY(-10px);
+    transition: opacity var(--transition-speed) ease, 
+                visibility var(--transition-speed) ease, 
+                transform var(--transition-speed) ease;
+}
+
+.language-dropdown.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.lang-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: 'Nova Square', sans-serif;
+    font-size: 16px;
+    color: var(--text-color);
+    border-radius: 4px;
+    transition: background var(--transition-speed) ease;
+}
+
+.lang-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Aseguramos que vuelva al estado normal */
+.lang-btn:not(:hover) {
+    background: transparent;
+}
+
+/* Tema oscuro - ajustar hover */
+:root.dark-theme .lang-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.flag-icon {
+    width: 24px;
+    height: 16px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* FOOTER - BARRA DE SISTEMA */
+.system-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--footer-height);
+    background: var(--footer-bg);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    transition: background var(--transition-speed);
+}
+
+.footer-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: var(--footer-text);
+}
+
+/* FOOTER - LOGO */
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo {
+    height: 50px;
+    width: auto;
+    cursor: pointer;
+    transition: transform var(--transition-speed) ease;
+}
+
+.footer-logo:hover {
+    transform: scale(1.5);
+}
+
+/* FOOTER - NAVEGACIÓN */
+.footer-nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    margin-left: 40px;
+}
+
+.footer-nav-icon {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity var(--transition-speed) ease, 
+                transform var(--transition-speed) ease;
+}
+
+.footer-nav-icon:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* FOOTER - REPRODUCTOR DE MÚSICA */
+.footer-player {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    justify-content: center;
+    max-width: 500px;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 150px;
+    width: 100%;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+#song-title {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    margin: 0;
+    animation: scroll-horizontal 10s linear infinite;
+}
+
+/* Botón de loop */
+.loop-btn {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity var(--transition-speed) ease;
+}
+
+.loop-btn:hover {
+    opacity: 0.8;
+}
+
+.loop-btn.active {
+    opacity: 1;
+    filter: brightness(1.2);
+}
+
+.player-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.player-btn {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity var(--transition-speed) ease, 
+                transform var(--transition-speed) ease;
+}
+
+.player-btn:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+.player-btn:active {
+    transform: scale(0.95);
+}
+
+/* Progress bar */
+.progress-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.time-display {
+    font-family: 'VT323', monospace;
+    font-size: 14px;
+    min-width: 40px;
+    text-align: center;
+}
+
+#progress-bar {
+    flex: 1;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--accent-color);
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+#progress-bar:hover {
+    opacity: 1;
+}
+
+/* Progress bar - WebKit (Chrome, Safari, Edge) */
+#progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background: var(--text-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+#progress-bar::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* Progress bar - Firefox */
+#progress-bar::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background: var(--text-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+}
+
+#progress-bar::-moz-range-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* Progress bar - Track Firefox */
+#progress-bar::-moz-range-track {
+    background: var(--accent-color);
+    height: 6px;
+    border-radius: 3px;
+}
+
+/* FOOTER - SISTEMA (DERECHA) */
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative; /*Necesario para posicionar volume-bar*/
+}
+
+.system-icon {
+    width: 28px;
+    height: 28px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+
+/* BARRA DE VOLUMEN - VERTICAL */
+.volume-bar {
+    position: absolute;
+    bottom: calc(100% + 15px); /*Justo encima del footer*/
+    right: 0; /*300*/
+    /*transform: translateX(-50%);*/
+    /*left: 0;*/
+    width: fit-content;
+    /*margin: 0 auto;*/
+    background: var(--dropdown-bg);
+    border: 2px solid var(--dropdown-border);
+    border-radius: var(--border-radius);
+    padding: 15px 12px; /*15-15*/
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1100;
+    
+    /* Oculto por defecto */
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none; /* Evita interacciones cuando está oculto */
+    transform: translateY(10px);
+    transition: opacity var(--transition-speed) ease, 
+                visibility var(--transition-speed) ease, 
+                transform var(--transition-speed) ease;
+}
+
+.volume-bar.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* Slider VERTICAL */
+#volume-slider {
+    /*-webkit-appearance: slider-vertical; /*none*/
+    /*appearance: slider-vertical; /*none*/
+    /*writing-mode: bt-lr; /*PARA FIREFOX*/
+    /*-webkit-writing-mode: bt-lr;*/
+    writing-mode: vertical-lr;
+    direction: rtl;
+    width: 8px; /*100*/ /*120*/
+    height: 120px; /*8*/
+    background: var(--accent-color);
+    outline: none;
+    opacity: 0.8;
+    border-radius: 4px; /*3*/
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+#volume-slider:hover {
+    opacity: 1;
+}
+
+/* Thumb - WebKit (Chrome, Safari, Edge) */
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /*appearance: none;*/
+    width: 18px; /*15*/
+    height: 18px; /*15*/
+    /*background: var(--text-color);*/
+    background-color: #000000; /* Modo claro por defecto */
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background 0.3 ease;
+}
+
+/* Thumb modo oscuro - WebKit */
+:root.dark-theme #volume-slider::-webkit-slider-thumb {
+    background-color: #FFFFFF;
+}
+
+#volume-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* Thumb - Firefox */
+#volume-slider::-moz-range-thumb {
+    width: 18px; /*15*/
+    height: 18px; /*15*/
+    /*background: var(--text-color);*/
+    background: #000000; /* Modo claro por defecto */
+    border: none; /**/
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background 0.3 ease;
+}
+
+/* Thumb modo oscuro - Firefox */
+:root.dark-theme #volume-slider::-moz-range-thumb {
+    background: #FFFFFF;
+}
+
+#volume-slider::-moz-range-thumb:hover {
+    transform: scale(1.2);
+}
+
+/* Track - Firefox */
+#volume-slider::-moz-range-track {
+    width: 8px; /*120*/
+    height: 120px; /*8*/
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+
+/* Track - WebKit (vertical) */
+#volume-slider::-webkit-slider-runnable-track {
+    width: 8px;
+    height: 120px;
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+
+#current-datetime {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    margin: 0 0 0 10px;
+    white-space: nowrap;
+}
+
+/* ANIMACIONES COMUNES */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scroll-horizontal {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.player-btn.playing {
+    animation: pulse 2s infinite;
+}
+
+/* UTILIDADES */
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* RESPONSIVE COMÚN */
+@media (max-width: 968px) {
+    .footer-player {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .control-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    #languageMode {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .footer-nav {
+        gap: 15px;
+        margin-left: 20px;
+    }
+    
+    .footer-nav-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .system-icon {
+        width: 24px;
+        height: 24px;
+    }
+    
+    #current-datetime {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-nav {
+        display: none;
+    }
+    
+    #current-datetime {
+        display: none;
+    }
+
+    .footer-logo {
+        height: 40px;
+    }
+}

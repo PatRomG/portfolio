@@ -1,0 +1,152 @@
+<!--============================================
+MAINPAGE_fr.html - Patricia Romero
+Page Principale
+============================================-->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Principale - Portfolio</title>
+
+    <!-- Enlaces a otros archivos -->
+     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/MAINPAGE.css">
+    
+    <!-- Scripts -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="js/animations.js"></script>-->
+    <script src="../js/common.js"></script>
+    <script src="../js/MAINPAGE.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Fredericka+the+Great&family=Just+Me+Again+Down+Here&family=Liu+Jian+Mao+Cao&family=Nova+Square&family=Pixelify+Sans:wght@400..700&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=VT323&display=swap" rel="stylesheet">
+</head>
+
+<body data-page="main">
+    <!-- HEADER: Controles superiores -->
+    <header class="top-controls">
+        <!-- Modo oscuro/claro -->
+        <img id="mode-toggle" src="../icons/dark.svg" alt="Toggle dark mode" class="control-icon">
+
+        <!-- Selector de idioma -->
+        <img id="languageMode" src="../icons/lang_en.svg" alt="Toggle language" class="control-icon">
+
+        <!-- Menú de idiomas (oculto por defecto) -->
+        <div id="language-menu" class="language-dropdown">
+            <button class="lang-btn" data-lang="en">
+                <img src="../photos/uk-flag.png" alt="UK flag" class="flag-icon">English
+            </button>
+            <button class="lang-btn" data-lang="es">
+                <img src="../photos/es-flag.png" alt="ES flag" class="flag-icon">Español
+            </button>
+            <button class="lang-btn" data-lang="fr">
+                <img src="../photos/fr-flag.png" alt="FR flag" class="flag-icon">Français
+            </button>
+            <button class="lang-btn" data-lang="ca">
+                <img src="../photos/val-flag.png" alt="VAL flag" class="flag-icon">Valencià
+            </button>
+            <button class="lang-btn" data-lang="zh">
+                <img src="../photos/zh-flag.png" alt="ZH flag" class="flag-icon">中文/普通话
+            </button>
+        </div>
+
+        <!-- LinkedIn -->
+        <img id="Linkedin" src="../icons/linkedin.svg" alt="Linkedin" class="control-icon linkedin-icon">
+    </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+        <!-- Sección izquierda: Información personal -->
+        <section class="intro-section">
+            <h1 class="main-title">PATRICIA<br>ROMERO</h1>
+            <p class="description">Artiste, Productrice, Designer</p>
+            <p class="subtitle">Je crée expériences multimédia</p>
+        </section>
+
+        <!-- Sección derecha: Menú de navegación -->
+        <nav class="navigation-menu">
+            <a href="../p3.portfolio/PORTFOLIO_fr.html" class="nav-item" id="nav-works">
+                <img src="../icons/folder.svg" alt="My Works" class="nav-icon" id="nav-icon-works">
+                <span class="nav-label">Mes projets</span>
+            </a>
+
+            <a href="../p1.aboutme/ABOUTMEPAGE_fr.html" class="nav-item" id="nav-about">
+                <img src="../icons/user.svg" alt="About me" class="nav-icon" id="nav-icon-user">
+                <span class="nav-label">À propos de moi</span>
+            </a>
+
+            <a href="../p2.contact/CONTACTPAGE_fr.html" class="nav-item" id="nav-contact">
+                <img src="../icons/contact.svg" alt="Contact" class="nav-icon" id="nav-icon-contact">
+                <span class="nav-label">Contact</span>
+            </a>
+        </nav>
+    </main>
+    
+    
+    <!-- FOOTER: Barra inferior tipo sistema operativo -->
+    <footer class="system-footer">
+        <div class="footer-content">
+            <!-- Logo izquierda -->
+            <div class="footer-left">
+                <img id="logo" src="../photos/loto.png" alt="Logo" class="footer-logo">
+            </div>
+
+            <!-- Iconos de navegación centro-izquierda -->
+            <div class="footer-nav">
+                <a href="../p0.mainpage/MAINPAGE_fr.html">
+                    <img src="../icons/casa.svg" alt="Main Page" class="footer-nav-icon" id="footer-home">
+                </a>
+                <a href="../p1.aboutme/ABOUTMEPAGE_fr.html">
+                    <img src="../icons/user.svg" alt="About Me Page" class="footer-nav-icon" id="footer-about">
+                </a>
+                <a href="../p2.contact/CONTACTPAGE_fr.html">
+                    <img src="../icons/contact.svg" alt="Contact Page" class="footer-nav-icon" id="footer-contact">
+                </a>
+                <a href="../p3.portfolio/PORTFOLIO_fr.html">
+                    <img src="../icons/folder.svg" alt="My Works Page" class="footer-nav-icon" id="footer-works">
+                </a>
+            </div>
+
+            <!-- Reproductor de música centro -->
+            <div class="footer-player">
+                <audio id="music-player" preload="metadata"></audio>
+                
+                <div class="player-info">
+                    <p id="song-title">Song - Artist</p>
+                </div>
+                
+                <div class="player-controls">
+                    <img id="prev-button" src="../icons/prev.svg" alt="Previous Button" class="player-btn">
+                    <img id="play-pause-button" src="../icons/play.svg" alt="Play/Pause Button" class="player-btn">
+                    <img id="next-button" src="../icons/next.svg" alt="Next Button" class="player-btn">
+                    <img id="loop-button" src="../icons/loop.svg" alt="Loop" class="loop-btn" title="Toggle loop">
+                    <!--<img id="pause-button" src="icons/pause.svg" alt="Pause Button" class="player-btn" style="display:none;">-->
+                </div>
+
+                <!-- Progress bar -->
+                 <div class="progress-container">
+                    <span id="current-time" class="time-display">0:00</span>
+                    <input type="range" id="progress-bar" min="0" max="100" value="0">
+                    <span id="duration" class="time-display">0:00</span>
+                 </div>
+            </div>
+
+            <!-- Sistema de info derecha -->
+            <div class="footer-right">
+                <p id="current-datetime"></p>
+                <img id="wifi" src="../icons/wifi.svg" alt="WiFi Status" class="system-icon">
+                <img id="volume" src="../icons/volume_up.svg" alt="Volume Control" class="system-icon">
+                <div id="volume-bar" class="volume-bar">
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

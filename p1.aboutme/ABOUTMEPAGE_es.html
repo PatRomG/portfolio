@@ -1,0 +1,211 @@
+<!--============================================
+ABOUTMEPAGE_es.html - Patricia Romero
+Página "sobre mí"
+============================================-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre mí - Portfolio</title>
+
+    <!-- Enlaces a otros archivos -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/ABOUTMEPAGE.css">
+    
+    <!-- Scripts -->
+    <script src="../js/common.js"></script>
+    <script src="../js/ABOUTMEPAGE.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Fredericka+the+Great&family=Just+Me+Again+Down+Here&family=Liu+Jian+Mao+Cao&family=Nova+Square&family=Pixelify+Sans:wght@400..700&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=VT323&display=swap" rel="stylesheet">
+</head>
+
+<body data-page="about">
+    <!-- HEADER: Controles superiores -->
+    <header class="top-controls">
+        <!-- Modo oscuro/claro -->
+        <img id="mode-toggle" src="../icons/dark.svg" alt="Toggle dark mode" class="control-icon">
+
+        <!-- Selector de idioma -->
+        <img id="languageMode" src="../icons/lang_en.svg" alt="Toggle language" class="control-icon">
+
+        <!-- Menú de idiomas (oculto por defecto) -->
+        <div id="language-menu" class="language-dropdown">
+            <button class="lang-btn" data-lang="en">
+                <img src="../photos/uk-flag.png" alt="UK flag" class="flag-icon">English
+            </button>
+            <button class="lang-btn" data-lang="es">
+                <img src="../photos/es-flag.png" alt="ES flag" class="flag-icon">Español
+            </button>
+            <button class="lang-btn" data-lang="fr">
+                <img src="../photos/fr-flag.png" alt="FR flag" class="flag-icon">Français
+            </button>
+            <button class="lang-btn" data-lang="ca">
+                <img src="../photos/val-flag.png" alt="VAL flag" class="flag-icon">Valencià
+            </button>
+            <button class="lang-btn" data-lang="zh">
+                <img src="../photos/zh-flag.png" alt="ZH flag" class="flag-icon">中文/普通话
+            </button>
+        </div>
+
+        <!-- LinkedIn -->
+        <img id="Linkedin" src="../icons/linkedin.svg" alt="Linkedin" class="control-icon linkedin-icon">
+    </header>
+    
+    <!-- CONTENIDO PRINCIPAL -->
+    <main></p>
+        <h1>¡Esta soy yo!</h1>
+        <section>
+            <img id="profile-picture" src="../photos/cv_photo.jpg" alt="Profile Picture">
+            <p>Siempre he estado interesada en el ámbito multimedia y sus innovaciones tecnológicas. He participado en diversos proyectos durante mi estudios, desde la edición multimedia hasta programación de aplicaciones y páginas web.<br><br> Soy una persona responsable, trabajadora y asertiva; siempre dispuesta a mejorar y aprender.<br><br> Aparte de cambiarme bastante el color del pelo, disfruto leyendo una buena novela, aprendiendo un nuevo idioma o encontrando algún artista con quien obsesionarme. La mayor parte del tiempo, ¡me encontrarás con los cascos puestos!</p>
+        </section>
+
+        <section>
+            <h2>MIS COMPETENCIAS</h2>
+            <h2>MI EXPERIENCIA LABORAL</h2>
+            <h2>MI EDUCACIÓN</h2>
+            <h2>INFORMACIÓN ADICIONAL</h2>
+        </section>
+
+        <!-- Below are the sections that will be shown/hidden based on the selected h2. My skills is the default. -->
+        <section id="my-skills">
+            <ul>COMPETENCIAS DIGITALES
+                <li>PROGRAMACIÓN: Python, HTML5, CSS3, JavaScript, C</li>
+                <li>EDICIÓN: Ableton, Premiere Pro, Audacity, Figma, Canva</li>
+                <li>OTRO SOFTWARE: Ableton, Soundcool</li>
+                <li>PAQUETE OFFICE</li>
+            </ul>
+            <ul>IDIOMAS
+                <li><img src="../photos/es-flag.png" alt="ES flag" class="flag-icon"> ESPAÑOL: Nativo</li>
+                <li><img src="../photos/val-flag.png" alt="VAL flag" class="flag-icon"> VALENCIÀ: C1</li>
+                <li><img src="../photos/uk-flag.png" alt="UK flag" class="flag-icon"> ENGLISH: C1</li>
+                <li><img src="../photos/fr-flag.png" alt="FR flag" class="flag-icon"> FRANÇAIS: A2</li>
+                <li><img src="../photos/zh-flag.png" alt="ZH flag" class="flag-icon"> 中文/普通话: A2</li>
+            </ul>
+        </section>
+
+        <section id="my-professional-experience" style="display:none;">
+            <p class="bold">Profesora Particular</p>
+            <p class="medium-italic">Autónoma</p>
+            <p class="regular">Refuerzo de conocimiento según el nivel del alumno.<br> Adaptación de técnicas de estudio.<br> Asignaturas como inglés y matemáticas. Flauta travesera.</p>
+            <p class="extralight">2018 - Actualidad</p><br><br>
+
+            <p class="bold">Figurante</p>
+            <p class="medium-italic">Bestreta, Valencia</p>
+            <p class="regular">Simulación de acciones cotidianas.</p>
+            <p class="extralight">Noviembre 2024</p><br><br>
+
+            <p class="bold">Personal de Sala</p>
+            <p class="medium-italic">Vips CC Nuevo Centro, Valencia</p>
+            <p class="regular">Atención al cliente de sala.<br> Servicio y elaboración de postres de carta.<br> Limpieza y organización de sala.</p>
+            <p class="extralight">Junio - Octubre 2022</p>
+        </section>
+
+         <section id="my-studies" style="display:none;">
+            <p class="bold">Curso de especialización en Creación y desarrollo de series de ficción</p>
+            <p class="medium-italic">Instituto RTVE (Online) <span class="extralight">[Enero 2025-Abril 2025]</span></p><br><br>
+
+            <p class="bold">Grado en Tecnología Digital y Multimedia</p>
+            <p class="medium-italic">Universitat Politècnica de València <span class="extralight">[2020-2024]</span>; Hong Kong University of Science and Technology <span class="extralight">[2023-2024]</span></p>
+            <p class="regular">Mención ARAUPV; Matrícula de Honor en el TFG; Diploma a Mejor Expediente en Tercer Curso</p><br><br>
+
+            <p class="bold">Grado Profesional en Flauta Travesera</p>
+            <p class="medium-italic">Conservatorio Profesional Mestre Molins <span class="extralight">[2016-2022]</span></p><br><br>
+            
+            <p class="bold">Bachillerato Científico</p>
+            <p class="medium-italic">Colegio Sagrado Corazón de Mislata <span class="extralight">[2018-2020]</span></p>
+            <p class="regular">Matrícula de Honor</p><br><br>
+
+            <p class="bold">Monitor de Actividades de Tiempo Libre <span class="extralight">[2020]</span></p>
+        </section>
+
+         <section id="additional-info" style="display:none;">
+            <div>
+                <p class="regular">Posesión del carnet de conducir tipo B.</p>
+                <p class="medium">2025</p>
+            </div>
+            <div>
+                <p class="regular">Oliver Hix/Ensemble, The Music Man. <span class="italic">HKUST Production.</span></p>
+                <p class="medium">2024</p>
+            </div>
+            <div>
+                <p class="regular">Voluntariado como Monitor de Tiempo Libre en los <span class="italic">Grupos Madre Micaela de Mislata.</span></p>
+                <p class="medium">2019-2022</p>
+            </div>
+            <div>
+                <p class="regular">Curso científico en Criptografía, <span class="italic">Universidad de Sevilla.</span></p>
+                <p class="medium">2018</p>
+            </div>
+            <div>
+                <p class="regular">Flautista en la Banda Sinfónica del CIM de Mislata.<span class="italic">Miembro de la Sociedad del CIM</span></p>
+                <p class="medium">2016-presente</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER: Barra inferior tipo sistema operativo -->
+    <footer class="system-footer">
+        <div class="footer-content">
+            <!-- Logo izquierda -->
+            <div class="footer-left">
+                <img id="logo" src="../photos/loto.png" alt="Logo" class="footer-logo">
+            </div>
+
+            <!-- Iconos de navegación centro-izquierda -->
+            <div class="footer-nav">
+                <a href="../p0.mainpage/MAINPAGE_es.html">
+                    <img src="../icons/casa.svg" alt="Main Page" class="footer-nav-icon" id="footer-home">
+                </a>
+                <a href="../p1.aboutme/ABOUTMEPAGE_es.html">
+                    <img src="../icons/user.svg" alt="About Me Page" class="footer-nav-icon" id="footer-about">
+                </a>
+                <a href="../p2.contact/CONTACTPAGE_es.html">
+                    <img src="../icons/contact.svg" alt="Contact Page" class="footer-nav-icon" id="footer-contact">
+                </a>
+                <a href="../p3.portfolio/PORTFOLIO_es.html">
+                    <img src="../icons/folder.svg" alt="My Works Page" class="footer-nav-icon" id="footer-works">
+                </a>
+            </div>
+
+            <!-- Reproductor de música centro -->
+            <div class="footer-player">
+                <audio id="music-player" preload="metadata"></audio>
+                
+                <div class="player-info">
+                    <p id="song-title">Song - Artist</p>
+                </div>
+                
+                <div class="player-controls">
+                    <img id="prev-button" src="../icons/prev.svg" alt="Previous Button" class="player-btn">
+                    <img id="play-pause-button" src="../icons/play.svg" alt="Play/Pause Button" class="player-btn">
+                    <img id="next-button" src="../icons/next.svg" alt="Next Button" class="player-btn">
+                    <img id="loop-button" src="../icons/loop.svg" alt="Loop" class="loop-btn" title="Toggle loop">
+                    <!--<img id="pause-button" src="icons/pause.svg" alt="Pause Button" class="player-btn" style="display:none;">-->
+                </div>
+
+                <!-- Progress bar -->
+                 <div class="progress-container">
+                    <span id="current-time" class="time-display">0:00</span>
+                    <input type="range" id="progress-bar" min="0" max="100" value="0">
+                    <span id="duration" class="time-display">0:00</span>
+                 </div>
+            </div>
+
+            <!-- Sistema de info derecha -->
+            <div class="footer-right">
+                <p id="current-datetime"></p>
+                <img id="wifi" src="../icons/wifi.svg" alt="WiFi Status" class="system-icon">
+                <img id="volume" src="../icons/volume_up.svg" alt="Volume Control" class="system-icon">
+                <div id="volume-bar" class="volume-bar">
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

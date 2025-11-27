@@ -1,0 +1,262 @@
+/* ============================================
+   ABOUTMEPAGE.CSS - Portfolio Patricia Romero
+   Hoja de estilos de la página "Sobre Mí"
+   ============================================ */
+
+/* ESTILO BASE */
+
+body {
+    background: linear-gradient(to bottom, var(--bg-gradient-start), var(--bg-gradient-end));
+    color: var(--text-color);
+    font-family: 'Chakra Petch', sans-serif;
+    min-height: 100vh;
+    transition: background var(--transition-speed) var(--transition-easing),
+                color var(--transition-speed) var(--transition-easing);
+    overflow-x: hidden;
+}
+
+
+/* CONTENIDO PRINCIPAL */
+
+main {
+    padding: 100px 5% 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: calc(100vh - 70px);
+}
+
+main > h1 {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: clamp(48px, 6vw, 72px);
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 3px;
+}
+
+
+/* SECCIÓN DE INTRODUCCIÓN */
+
+main > section:first-of-type {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    background: var(--section-bg);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+#profile-picture {
+    width: 250px !important;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+#profile-picture:hover {
+    transform: scale(1.03);
+}
+
+main > section:first-of-type p {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: clamp(14px, 1.5vw, 18px);
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+
+/* SECCIÓN DE NAVEGACIÓN (TABS) */
+
+main > section:nth-of-type(2) {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+main > section:nth-of-type(2) h2 {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: clamp(20px, 2.5vw, 24px);
+    padding: 12px 25px;
+    background: var(--dropdown-bg);
+    border: 2px solid var(--dropdown-border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+main > section:nth-of-type(2) h2:hover {
+    background: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+main > section:nth-of-type(2) h2.active {
+    background: var(--accent-color);
+    font-weight: bold;
+    transform: scale(1.05);
+}
+
+
+/* SECCIONES DE CONTENIDO */
+
+main > section[id] {
+    background: var(--section-bg);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    min-height: 400px;
+    transition: opacity 0.3s ease;
+}
+
+main > section[id] ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+main > section[id] ul::before {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+main > section[id] li {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: clamp(14px, 1.5vw, 18px);
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+:root.dark-theme main > section[id] li {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+main > section[id] li:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.7);
+}
+
+:root.dark-theme main > section[id] li:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+/* SECCIÓN ADDITIONAL INFO */
+
+#additional-info div {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border-left: 5px solid var(--accent-color);
+    transition: transform 0.2s ease;
+}
+
+:root.dark-theme #additional-info div {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#additional-info div:hover {
+    transform: translateX(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* TIPOGRAFÍAS ESPECÍFICAS */
+
+.regular {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: clamp(14px, 1.5vw, 24px);
+}
+
+.medium {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: clamp(14px, 1.5vw, 24px);
+}
+
+.italic {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(14px, 1.5vw, 24px);
+}
+
+.medium-italic {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: clamp(14px, 1.5vw, 24px);
+}
+
+.extralight {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: clamp(14px, 1.5vw, 24px);
+}
+
+.bold {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: clamp(14px, 1.5vw, 24px);
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 968px) {
+    main > section:first-of-type {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #profile-picture {
+        width: 200px !important;
+    }
+
+    main > section:nth-of-type(2) {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    main > section:nth-of-type(2) h2 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    main {
+        padding: 100px 3% 90px;
+    }
+
+    main > section[id] {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    #profile-picture {
+        width: 150px !important;
+    }
+
+    main > section[id] {
+        padding: 20px;
+    }
+}

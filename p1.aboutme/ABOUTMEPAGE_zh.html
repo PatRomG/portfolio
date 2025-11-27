@@ -1,0 +1,211 @@
+<!--============================================
+ABOUTMEPAGE_zh.html - Patricia Romero
+关于我
+============================================-->
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我 - Portfolio</title>
+
+    <!-- Enlaces a otros archivos -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/ABOUTMEPAGE.css">
+    
+    <!-- Scripts -->
+    <script src="../js/common.js"></script>
+    <script src="../js/ABOUTMEPAGE.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Fredericka+the+Great&family=Just+Me+Again+Down+Here&family=Liu+Jian+Mao+Cao&family=Nova+Square&family=Pixelify+Sans:wght@400..700&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=VT323&display=swap" rel="stylesheet">
+</head>
+
+<body data-page="about">
+    <!-- HEADER: Controles superiores -->
+    <header class="top-controls">
+        <!-- Modo oscuro/claro -->
+        <img id="mode-toggle" src="../icons/dark.svg" alt="Toggle dark mode" class="control-icon">
+
+        <!-- Selector de idioma -->
+        <img id="languageMode" src="../icons/lang_en.svg" alt="Toggle language" class="control-icon">
+
+        <!-- Menú de idiomas (oculto por defecto) -->
+        <div id="language-menu" class="language-dropdown">
+            <button class="lang-btn" data-lang="en">
+                <img src="../photos/uk-flag.png" alt="UK flag" class="flag-icon">English
+            </button>
+            <button class="lang-btn" data-lang="es">
+                <img src="../photos/es-flag.png" alt="ES flag" class="flag-icon">Español
+            </button>
+            <button class="lang-btn" data-lang="fr">
+                <img src="../photos/fr-flag.png" alt="FR flag" class="flag-icon">Français
+            </button>
+            <button class="lang-btn" data-lang="ca">
+                <img src="../photos/val-flag.png" alt="VAL flag" class="flag-icon">Valencià
+            </button>
+            <button class="lang-btn" data-lang="zh">
+                <img src="../photos/zh-flag.png" alt="ZH flag" class="flag-icon">中文/普通话
+            </button>
+        </div>
+
+        <!-- LinkedIn -->
+        <img id="Linkedin" src="../icons/linkedin.svg" alt="Linkedin" class="control-icon linkedin-icon">
+    </header>
+    
+    <!-- CONTENIDO PRINCIPAL -->
+    <main></p>
+        <h1>这是我!</h1>
+        <section>
+            <img id="profile-picture" src="../photos/cv_photo.jpg" alt="Profile Picture">
+            <p>我一直对多媒体及其技术创新很感兴趣。在本科学习的时候，我参与过多个项目，包括媒体编辑、应用程序编程和网站开发。<br><br> 我自认为是一个负责、勤奋努力且自信的人，总是想进步，不断学习。<br><br> 除了喜欢尝试各种发型，我还喜欢看小说、学习一门新语言，或者发现一位让我着迷的新艺人。大多数时候，你们会看到我戴着耳机!</p>
+        </section>
+
+        <section>
+            <h2>我的技能</h2>
+            <h2>我的专业经验</h2>
+            <h2>我的学历</h2>
+            <h2>补充信息</h2>
+        </section>
+
+        <!-- Below are the sections that will be shown/hidden based on the selected h2. My skills is the default. -->
+        <section id="my-skills">
+            <ul>数字技能
+                <li>编程: Python、HTML5、CSS3、JavaScript、C</li>
+                <li>编辑: Ableton、Premiere Pro、Audacity、Figma、Canva</li>
+                <li>其他软件: Ableton, Soundcool</li>
+                <li>办公软件</li>
+            </ul>
+            <ul>语言
+                <li><img src="../photos/es-flag.png" alt="ES flag" class="flag-icon"> ESPAÑOL: Native</li>
+                <li><img src="../photos/val-flag.png" alt="VAL flag" class="flag-icon"> VALENCIÀ: C1</li>
+                <li><img src="../photos/uk-flag.png" alt="UK flag" class="flag-icon"> ENGLISH: C1</li>
+                <li><img src="../photos/fr-flag.png" alt="FR flag" class="flag-icon"> FRANÇAIS: A2</li>
+                <li><img src="../photos/zh-flag.png" alt="ZH flag" class="flag-icon"> 中文/普通话: A2</li>
+            </ul>
+        </section>
+
+        <section id="my-professional-experience" style="display:none;">
+            <p class="bold">私人教师</p>
+            <p class="medium-italic">自由职业</p>
+            <p class="regular">根据学生水平强化知识。<br> 调整学习方法。<br> 科目包括英、数学、长笛。</p>
+            <p class="extralight">从2018年到今</p><br><br>
+
+            <p class="bold">临时演员</p>
+            <p class="medium-italic">Bestreta, 瓦伦西亚</p>
+            <p class="regular">模拟常见动作</p>
+            <p class="extralight">2024年11月</p><br><br>
+
+            <p class="bold">员工</p>
+            <p class="medium-italic">Vips CC Nuevo Centro, 瓦伦西亚</p>
+            <p class="regular">客户服务。<br> 准备饮品及甜点。<br> 清洁、整理餐厅。</p>
+            <p class="extralight">2022年6月到10月</p>
+        </section>
+
+         <section id="my-studies" style="display:none;">
+            <p class="bold">创作小说聚集的专业课程</p>
+            <p class="medium-italic">Instituto RTVE (网上) <span class="extralight">[2025年1月到2025年4月]</span></p><br><br>
+
+            <p class="bold">数字与多媒体技术学士学位</p>
+            <p class="medium-italic">Universitat Politècnica de València <span class="extralight">[2020年到2024年]</span>; Hong Kong University of Science and Technology <span class="extralight">[2023年到2024年]</span></p>
+            <p class="regular">ARAUPV荣誉; 最终项目荣誉; 第三年级文凭学术卓越奖</p><br><br>
+
+            <p class="bold">长笛专业音乐学位</p>
+            <p class="medium-italic">Conservatorio Profesional Mestre Molins <span class="extralight">[2016年到2022年]</span></p><br><br>
+            
+            <p class="bold">科学学科</p>
+            <p class="medium-italic">米斯拉塔的Sagrado Corazón学校 <span class="extralight">[2018年到2020年]</span></p>
+            <p class="regular">荣誉</p><br><br>
+
+            <p class="bold">课外活动辅导员 <span class="extralight">[2020]</span></p>
+        </section>
+
+         <section id="additional-info" style="display:none;">
+            <div>
+                <p class="regular">B类驾驶执照。</p>
+                <p class="medium">2025年</p>
+            </div>
+            <div>
+                <p class="regular">Oliver Hix/Ensemble, The Music Man. <span class="italic">HKUST Production.</span></p>
+                <p class="medium">2024年</p>
+            </div>
+            <div>
+                <p class="regular">在米斯拉塔的 <span class="italic">Grupos Madre Micaela</span> 担任课外活动辅导员志愿者。</p>
+                <p class="medium">2019年到2022年</p>
+            </div>
+            <div>
+                <p class="regular">密码学科学课程， <span class="italic">Universidad de Sevilla.</span></p>
+                <p class="medium">2018年</p>
+            </div>
+            <div>
+                <p class="regular">米斯拉塔CIM交响乐团的长笛演奏着。<span class="italic">CIM协会会员。</span></p>
+                <p class="medium">2016年到今</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER: Barra inferior tipo sistema operativo -->
+    <footer class="system-footer">
+        <div class="footer-content">
+            <!-- Logo izquierda -->
+            <div class="footer-left">
+                <img id="logo" src="../photos/loto.png" alt="Logo" class="footer-logo">
+            </div>
+
+            <!-- Iconos de navegación centro-izquierda -->
+            <div class="footer-nav">
+                <a href="../p0.mainpage/MAINPAGE_zh.html">
+                    <img src="../icons/casa.svg" alt="Main Page" class="footer-nav-icon" id="footer-home">
+                </a>
+                <a href="../p1.aboutme/ABOUTMEPAGE_zh.html">
+                    <img src="../icons/user.svg" alt="About Me Page" class="footer-nav-icon" id="footer-about">
+                </a>
+                <a href="../p2.contact/CONTACTPAGE_zh.html">
+                    <img src="../icons/contact.svg" alt="Contact Page" class="footer-nav-icon" id="footer-contact">
+                </a>
+                <a href="../p3.portfolio/PORTFOLIO_zh.html">
+                    <img src="../icons/folder.svg" alt="My Works Page" class="footer-nav-icon" id="footer-works">
+                </a>
+            </div>
+
+            <!-- Reproductor de música centro -->
+            <div class="footer-player">
+                <audio id="music-player" preload="metadata"></audio>
+                
+                <div class="player-info">
+                    <p id="song-title">Song - Artist</p>
+                </div>
+                
+                <div class="player-controls">
+                    <img id="prev-button" src="../icons/prev.svg" alt="Previous Button" class="player-btn">
+                    <img id="play-pause-button" src="../icons/play.svg" alt="Play/Pause Button" class="player-btn">
+                    <img id="next-button" src="../icons/next.svg" alt="Next Button" class="player-btn">
+                    <img id="loop-button" src="../icons/loop.svg" alt="Loop" class="loop-btn" title="Toggle loop">
+                    <!--<img id="pause-button" src="icons/pause.svg" alt="Pause Button" class="player-btn" style="display:none;">-->
+                </div>
+
+                <!-- Progress bar -->
+                 <div class="progress-container">
+                    <span id="current-time" class="time-display">0:00</span>
+                    <input type="range" id="progress-bar" min="0" max="100" value="0">
+                    <span id="duration" class="time-display">0:00</span>
+                 </div>
+            </div>
+
+            <!-- Sistema de info derecha -->
+            <div class="footer-right">
+                <p id="current-datetime"></p>
+                <img id="wifi" src="../icons/wifi.svg" alt="WiFi Status" class="system-icon">
+                <img id="volume" src="../icons/volume_up.svg" alt="Volume Control" class="system-icon">
+                <div id="volume-bar" class="volume-bar">
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

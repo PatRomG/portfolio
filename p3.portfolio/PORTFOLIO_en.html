@@ -1,0 +1,574 @@
+<!--============================================
+PORTFOLIO_en.html - Patricia Romero
+My Works Page
+============================================-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My works - Portfolio</title>
+
+    <!-- Enlaces a otros archivos -->
+     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/PORTFOLIO.css">
+
+    <!-- Scripts -->
+    <script src="../js/common.js"></script>
+    <script src="../js/PORTFOLIO.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Fredericka+the+Great&family=Just+Me+Again+Down+Here&family=Liu+Jian+Mao+Cao&family=Nova+Square&family=Pixelify+Sans:wght@400..700&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&family=VT323&display=swap" rel="stylesheet">
+</head>
+
+<body data-page="portfolio">
+    <!-- HEADER: Controles superiores -->
+    <header class="top-controls">
+        <!-- Modo oscuro/claro -->
+        <img id="mode-toggle" src="../icons/dark.svg" alt="Toggle dark mode" class="control-icon">
+
+        <!-- Selector de idioma -->
+        <img id="languageMode" src="../icons/lang_en.svg" alt="Toggle language" class="control-icon">
+
+        <!-- Menú de idiomas (oculto por defecto) -->
+        <div id="language-menu" class="language-dropdown">
+            <button class="lang-btn" data-lang="en">
+                <img src="../photos/uk-flag.png" alt="UK flag" class="flag-icon">English
+            </button>
+            <button class="lang-btn" data-lang="es">
+                <img src="../photos/es-flag.png" alt="ES flag" class="flag-icon">Español
+            </button>
+            <button class="lang-btn" data-lang="fr">
+                <img src="../photos/fr-flag.png" alt="FR flag" class="flag-icon">Français
+            </button>
+            <button class="lang-btn" data-lang="ca">
+                <img src="../photos/val-flag.png" alt="VAL flag" class="flag-icon">Valencià
+            </button>
+            <button class="lang-btn" data-lang="zh">
+                <img src="../photos/zh-flag.png" alt="ZH flag" class="flag-icon">中文/普通话
+            </button>
+        </div>
+
+        <!-- LinkedIn -->
+        <img id="Linkedin" src="../icons/linkedin.svg" alt="Linkedin" class="control-icon linkedin-icon">
+    </header>
+
+    <!-- BARRA DE NAVEGACIÓN DE CATEGORÍAS -->
+    <nav class="portfolio-nav">
+        <div class="category-tabs">
+            <button class="category-tab active" data-category="all">ALL</button>
+            <button class="category-tab" data-category="videos">VIDEOS</button>
+            <button class="category-tab" data-category="music">MUSIC</button>
+            <button class="category-tab" data-category="other">OTHER PROJECTS</button>
+        </div>
+    </nav>
+
+
+    <!-- TO-DO LIST STICKY NOTE -->
+    <div class="todo-note">
+        <h3>To Do List</h3>
+        <ul>
+            <li>✓ Portfolio web</li>
+            <li>○ Logo animation</li>
+            <li>○ Motion graphics</li>
+            <li>○ Music</li>
+        </ul>
+    </div>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <!-- CONTENEDOR DE PROYECTOS -->
+        <div class="projects-container">
+            
+            <!-- OTHER - PORTFOLIO -->
+            <div class="project-card" data-category="other">
+                <div class="project-thumbnail">
+                    <img src="../photos/web.png" alt="Web Project">
+                </div>
+                <div class="project-info">
+                    <div class="project-header">
+                        <h3 class="project-title">WEB DEVELOPMENT</h3>
+                        <span class="project-date">[2025]</span>
+                    </div>
+                    <p class="project-description">
+                        Interactive web application built with HTML, CSS, and JavaScript. Responsive design.
+                    </p>
+                    <div class="project-tags">
+                        <span>WEB</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- VIDEO/MUSIC - TEMPO -->
+            <div class="project-card" data-category="videos music">
+                <div class="project-thumbnail">
+                    <a href="https://www.youtube.com/embed/x_s8M6eUhug" target="_blank">
+                        <img src="https://img.youtube.com/vi/x_s8M6eUhug/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-icon">▶</div>
+                    </a>
+                </div>
+                <div class="project-info">
+                    <div class="project-header">
+                        <h3 class="project-title">TIMELESS Project - TEMPO & Ghost In The Shell</h3>
+                        <span class="project-date">[2024]</span>
+                    </div>
+                    <p class="project-description">
+                        Video created for my final project, an EP produced in collaboration with Sergio López, 'TIMELESS'.
+                    </p>
+                    <div class="project-tags">
+                        <span>VIDEO</span>
+                        <span>EDITING</span>
+                        <span>PREMIERE</span>
+                        <span>MUSIC</span>
+                        <span>COMPOSITION</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIDEO/MUSIC - TIMELESS -->
+            <div class="project-card" data-category="videos music">
+                <div class="project-thumbnail">
+                    <a href="https://www.youtube.com/embed/dAt3jYypurY" target="_blank">
+                        <img src="https://img.youtube.com/vi/dAt3jYypurY/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-icon">▶</div>
+                    </a>
+                </div>
+                <div class="project-info">
+                    <div class="project-header">
+                        <h3 class="project-title">TIMELESS Project - TIMELESS & League of Legends</h3>
+                        <span class="project-date">[2024]</span>
+                    </div>
+                    <p class="project-description">
+                        Video created for my final project, an EP produced in collaboration with Sergio López, 'TIMELESS'. Also, Video Assignment 'Multiverse Madness Remix' from COMP4441 'Music Video Creation', where there's creative freedom.
+                    </p>
+                    <div class="project-tags">
+                        <span>VIDEO</span>
+                        <span>EDITING</span>
+                        <span>PREMIERE</span>
+                        <span>MUSIC</span>
+                        <span>COMPOSITION</span>
+                        <span>STORYTELLING</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIDEO/MUSIC - RELOJES -->
+            <div class="project-card" data-category="videos music">
+                <div class="project-thumbnail">
+                    <a href="https://www.youtube.com/embed/Qi-9YqTpTec" target="_blank">
+                        <img src="https://img.youtube.com/vi/Qi-9YqTpTec/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-icon">▶</div>
+                    </a>
+                </div>
+                <div class="project-info">
+                    <div class="project-header">
+                        <h3 class="project-title">TIMELESS Project - Relojes de Muñeca & Coco</h3>
+                        <span class="project-date">[2024]</span>
+                    </div>
+                    <p class="project-description">
+                        Video created for my final project, an EP produced in collaboration with Sergio López, 'TIMELESS'.
+                    </p>
+                    <div class="project-tags">
+                        <span>VIDEO</span>
+                        <span>EDITING</span>
+                        <span>PREMIERE</span>
+                        <span>MUSIC</span>
+                        <span>COMPOSITION</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIDEO/MUSIC - YOU -->
+            <div class="project-card" data-category="videos music">
+                <div class="project-thumbnail">
+                    <a href="https://www.youtube.com/embed/AT1uo6HGSrs" target="_blank">
+                        <img src="https://img.youtube.com/vi/AT1uo6HGSrs/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-icon">▶</div>
+                    </a>
+                </div>
+                <div class="project-info">
+                    <div class="project-header">
+                        <h3 class="project-title">TIMELESS Project - You (Late Night Thoughts) & How To Train Your Dragon</h3>
+                        <span class="project-date">[2024]</span>
+                    </div>
+                    <p class="project-description">
+                        Video created for my final project, an EP produced in collaboration with Sergio López, 'TIMELESS'.
+                    </p>
+                    <div class="project-tags">
+                        <span>VIDEO</span>
+                        <span>EDITING</span>
+                        <span>PREMIERE</span>
+                        <span>MUSIC</span>
+                        <span>COMPOSITION</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MUSIC - LOSTTHROUGHTIME -->
+            <div class="project-card" data-category="music">
+                <div class="project-thumbnail">
+                    <a href="https://www.youtube.com/embed/9ZAuwjEE8JI" target="_blank">
+                        <img src="https://img.youtube.com/vi/9ZAuwjEE8JI/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-icon">▶</div>
+                    </a>
+                </div>
+                <div class="project-info">
+                    <div class="project-header">
+                        <h3 class="project-title">Lost Through Time</h3>
+                        <span class="project-date">[2024]</span>
+                    </div>
+                    <p class="project-description">
+                        Final Project for 'Introduction to Electronic Music' in HKUST. Original music composition.
+                    </p>
+                    <div class="project-tags">
+                        <span>MUSIC</span>
+                        <span>COMPOSITION</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIDEO - ZORRO X PUSSINBOOTS -->
+            <div class="project-card" data-category="videos">
+                <div class="project-thumbnail">
+                    <a href="https://www.youtube.com/embed/I8vU1UkM2qk" target="_blank">
+                        <img src="https://img.youtube.com/vi/I8vU1UkM2qk/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-icon">▶</div>
+                    </a>
+                </div>
+                <div class="project-info">
+                    <div class="project-header">
+                        <h3 class="project-title">El Zorro x Puss In Boots (Spanish Mix)</h3>
+                        <span class="project-date">[2024]</span>
+                    </div>
+                    <p class="project-description">
+                        Video Assignment 'Naughty Secret Lyric Video Remix' from COMP4441 'Music Video Creation', where it's required to create a lyric video with custom remix music, showing a twist on an existing story.
+                    </p>
+                    <div class="project-tags">
+                        <span>VIDEO</span>
+                        <span>EDITING</span>
+                        <span>PREMIERE</span>
+                        <span>MUSIC</span>
+                        <span>MASHUP</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MUSIC - SLEEPWALKING -->
+            <div class="project-card" data-category="music">
+                <div class="project-thumbnail">
+                    <a href="https://www.youtube.com/embed/fq59x3rhqdw" target="_blank">
+                        <img src="https://img.youtube.com/vi/fq59x3rhqdw/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-icon">▶</div>
+                    </a>
+                </div>
+                <div class="project-info">
+                    <div class="project-header">
+                        <h3 class="project-title">Sleepwalking</h3>
+                        <span class="project-date">[2024]</span>
+                    </div>
+                    <p class="project-description">
+                        Midterm Project for 'Introduction to Electronic Music' in HKUST. Original musique concrète composition and recordings.
+                    </p>
+                    <div class="project-tags">
+                        <span>MUSIC</span>
+                        <span>COMPOSITION</span>
+                        <span>MUSIQUE CONCRÈTE</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIDEO - FASTF X MARIO -->
+            <div class="project-card" data-category="videos">
+                <div class="project-thumbnail">
+                    <a href="https://www.youtube.com/embed/sEiz78bBAd0" target="_blank">
+                        <img src="https://img.youtube.com/vi/sEiz78bBAd0/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-icon">▶</div>
+                    </a>
+                </div>
+                <div class="project-info">
+                    <div class="project-header">
+                        <h3 class="project-title">Fast and Furious x Mario Kart</h3>
+                        <span class="project-date">[2024]</span>
+                    </div>
+                    <p class="project-description">
+                        Video Assignment 'Greenscreen Masking Mashup Remix' from COMP4441 'Music Video Creation', where it's required to mashup scenes and characters from different movies.
+                    </p>
+                    <div class="project-tags">
+                        <span>VIDEO</span>
+                        <span>EDITING</span>
+                        <span>GREENSCREENING</span>
+                        <span>PREMIERE</span>
+                        <span>MUSIC</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIDEO - RED,WHITE,ROYAL X DTAKE -->
+            <div class="project-card" data-category="videos">
+                <div class="project-thumbnail">
+                    <a href="https://www.youtube.com/embed/oCLWg3cvNAM" target="_blank">
+                        <img src="https://img.youtube.com/vi/oCLWg3cvNAM/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-icon">▶</div>
+                    </a>
+                </div>
+                <div class="project-info">
+                    <div class="project-header">
+                        <h3 class="project-title">Red, White & Royal Blue x Double Take (original and cover duet mashup)</h3>
+                        <span class="project-date">[2024]</span>
+                    </div>
+                    <p class="project-description">
+                        Video Assignment 'Classic Parody Mashup' from COMP4441 'Music Video Creation', where it's required to combine the video from one source and the music from another.
+                    </p>
+                    <div class="project-tags">
+                        <span>VIDEO</span>
+                        <span>EDITING</span>
+                        <span>PREMIERE</span>
+                        <span>MUSIC</span>
+                        <span>MASHUP</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIDEO - COLOURS OF YOUTH -->
+            <div class="project-card" data-category="videos">
+                <div class="project-thumbnail">
+                    <a href="https://www.youtube.com/embed/OmGZTIeyk2w" target="_blank">
+                        <img src="https://img.youtube.com/vi/OmGZTIeyk2w/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-icon">▶</div>
+                    </a>
+                </div>
+                <div class="project-info">
+                    <div class="project-header">
+                        <h3 class="project-title">The Colours of Youth</h3>
+                        <span class="project-date">[2023]</span>
+                    </div>
+                    <p class="project-description">
+                        Video Assignment 'Multiverse Madness Remix' from COMP1943 'Creative Sound Design', where there's creative freedom.
+                    </p>
+                    <div class="project-tags">
+                        <span>VIDEO</span>
+                        <span>EDITING</span>
+                        <span>PREMIERE</span>
+                        <span>MUSIC</span>
+                        <span>MASHUP</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIDEO - GRINCH SAVES -->
+            <div class="project-card" data-category="videos">
+                <div class="project-thumbnail">
+                    <a href="https://www.youtube.com/embed/Wtiqh2SOL-Y" target="_blank">
+                        <img src="https://img.youtube.com/vi/Wtiqh2SOL-Y/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-icon">▶</div>
+                    </a>
+                </div>
+                <div class="project-info">
+                    <div class="project-header">
+                        <h3 class="project-title">The Grinch Saves Christmas (Dance Mashup)</h3>
+                        <span class="project-date">[2023]</span>
+                    </div>
+                    <p class="project-description">
+                        Video Assignment 'Naughty Secret Lyric Video Remix' from COMP1943 'Creative Sound Design', where it's required to create a lyric video with custom remix music, showing a twist on an existing story.
+                    </p>
+                    <div class="project-tags">
+                        <span>VIDEO</span>
+                        <span>EDITING</span>
+                        <span>PREMIERE</span>
+                        <span>MUSIC</span>
+                        <span>MASHUP</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIDEO - DOORS TO NEW WORLDS -->
+            <div class="project-card" data-category="videos">
+                <div class="project-thumbnail">
+                    <a href="https://www.youtube.com/embed/3uOLOUogIzQ" target="_blank">
+                        <img src="https://img.youtube.com/vi/3uOLOUogIzQ/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-icon">▶</div>
+                    </a>
+                </div>
+                <div class="project-info">
+                    <div class="project-header">
+                        <h3 class="project-title">Wonderful World x Doors To New Worlds</h3>
+                        <span class="project-date">[2023]</span>
+                    </div>
+                    <p class="project-description">
+                        Video Assignment 'Greenscreen Masking Mashup Remix' from COMP1943 'Creative Sound Design', where it's required to combine scenes and characters from different movies.
+                    </p>
+                    <div class="project-tags">
+                        <span>VIDEO</span>
+                        <span>EDITING</span>
+                        <span>GREENSCREENING</span>
+                        <span>PREMIERE</span>
+                        <span>MUSIC</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIDEO - THG X SURVIVOR -->
+            <div class="project-card" data-category="videos">
+                <div class="project-thumbnail">
+                    <a href="https://www.youtube.com/embed/duNEVI4k9dc" target="_blank">
+                        <img src="https://img.youtube.com/vi/duNEVI4k9dc/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-icon">▶</div>
+                    </a>
+                </div>
+                <div class="project-info">
+                    <div class="project-header">
+                        <h3 class="project-title">The Hunger Games x Survivor</h3>
+                        <span class="project-date">[2023]</span>
+                    </div>
+                    <p class="project-description">
+                        Video Assignment 'Movie Mashup Parody' from COMP1943 'Creative Sound Design', where it's required to combine the video from one source and the music from another.
+                    </p>
+                    <div class="project-tags">
+                        <span>VIDEO</span>
+                        <span>EDITING</span>
+                        <span>PREMIERE</span>
+                        <span>MUSIC</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OTHER - DIGRAF -->
+            <div class="project-card" data-category="other">
+                <div class="project-thumbnail">
+                    <a href="https://www.youtube.com/embed/0fZK7XusFT8" target="_blank">
+                        <img src="https://img.youtube.com/vi/0fZK7XusFT8/maxresdefault.jpg" alt="Video thumbnail">
+                        <div class="play-icon">▶</div>
+                    </a>
+                </div>
+                <div class="project-info">
+                    <div class="project-header">
+                        <h3 class="project-title">Animation</h3>
+                        <span class="project-date">[2022]</span>
+                    </div>
+                    <p class="project-description">
+                        Final Project for Graphic Design Course (DIGRAF) in UPV. From 2D Design to 3D Design and Animation.
+                    </p>
+                    <div class="project-tags">
+                        <span>VIDEO</span>
+                        <span>3D ART</span>
+                        <span>2D ART</span>
+                        <span>ANIMATION</span>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <!-- PROJECT CARD - OTHER 
+            <div class="project-card" data-category="other">
+                <div class="project-thumbnail">
+                    <img src="photos/cv_photo.jpg" alt="Design Project" onerror="this.src='../icons/folder_filled.svg'">
+                </div>
+                <div class="project-info">
+                    <div class="project-header">
+                        <h3 class="project-title">GRAPHIC DESIGN</h3>
+                        <span class="project-date">[2023]</span>
+                    </div>
+                    <p class="project-description">
+                        Branding and visual identity design project. Includes logo, color palette, and typography.
+                    </p>
+                    <div class="project-tags">
+                        <span>DESIGN</span>
+                        <span>BRANDING</span>
+                        <span>ILLUSTRATOR</span>
+                    </div>
+                </div>
+            </div>-->
+
+            <!-- PROJECT CARD 6 - MUSIC 
+            <div class="project-card" data-category="music">
+                <div class="project-thumbnail">
+                    <img src="photos/cv_photo.jpg" alt="Music Project" onerror="this.src='../icons/folder_filled.svg'">
+                </div>
+                <div class="project-info">
+                    <div class="project-header">
+                        <h3 class="project-title">SOUNDTRACK</h3>
+                        <span class="project-date">[2024]</span>
+                    </div>
+                    <p class="project-description">
+                        Soundtrack composition for short film. Combines electronic and acoustic elements.
+                    </p>
+                    <div class="project-tags">
+                        <span>MUSIC</span>
+                        <span>SOUNDTRACK</span>
+                        <span>FILM</span>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </main>
+
+    <!-- FOOTER: Barra inferior tipo sistema operativo -->
+    <footer class="system-footer">
+        <div class="footer-content">
+            <!-- Logo izquierda -->
+            <div class="footer-left">
+                <img id="logo" src="../photos/loto.png" alt="Logo" class="footer-logo">
+            </div>
+
+            <!-- Iconos de navegación centro-izquierda -->
+            <div class="footer-nav">
+                <a href="../p0.mainpage/MAINPAGE_en.html">
+                    <img src="../icons/casa.svg" alt="Main Page" class="footer-nav-icon" id="footer-home">
+                </a>
+                <a href="../p1.aboutme/ABOUTMEPAGE_en.html">
+                    <img src="../icons/user.svg" alt="About Me Page" class="footer-nav-icon" id="footer-about">
+                </a>
+                <a href="../p2.contact/CONTACTPAGE_en.html">
+                    <img src="../icons/contact.svg" alt="Contact Page" class="footer-nav-icon" id="footer-contact">
+                </a>
+                <a href="../p3.portfolio/PORTFOLIO_en.html">
+                    <img src="../icons/folder.svg" alt="My Works Page" class="footer-nav-icon" id="footer-works">
+                </a>
+            </div>
+
+            <!-- Reproductor de música centro -->
+            <div class="footer-player">
+                <audio id="music-player" preload="metadata"></audio>
+                
+                <div class="player-info">
+                    <p id="song-title">Song - Artist</p>
+                </div>
+                
+                <div class="player-controls">
+                    <img id="prev-button" src="../icons/prev.svg" alt="Previous Button" class="player-btn">
+                    <img id="play-pause-button" src="../icons/play.svg" alt="Play/Pause Button" class="player-btn">
+                    <img id="next-button" src="../icons/next.svg" alt="Next Button" class="player-btn">
+                    <img id="loop-button" src="../icons/loop.svg" alt="Loop" class="loop-btn" title="Toggle loop">
+                    <!--<img id="pause-button" src="icons/pause.svg" alt="Pause Button" class="player-btn" style="display:none;">-->
+                </div>
+
+                <!-- Progress bar -->
+                 <div class="progress-container">
+                    <span id="current-time" class="time-display">0:00</span>
+                    <input type="range" id="progress-bar" min="0" max="100" value="0">
+                    <span id="duration" class="time-display">0:00</span>
+                 </div>
+            </div>
+
+            <!-- Sistema de info derecha -->
+            <div class="footer-right">
+                <p id="current-datetime"></p>
+                <img id="wifi" src="../icons/wifi.svg" alt="WiFi Status" class="system-icon">
+                <img id="volume" src="../icons/volume_up.svg" alt="Volume Control" class="system-icon">
+                <div id="volume-bar" class="volume-bar">
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
