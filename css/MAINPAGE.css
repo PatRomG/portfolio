@@ -96,7 +96,7 @@ body {
 .nav-icon {
     width: 110px;
     height: 110px;
-    margin-bottom: 12px; /*20*/
+    margin-bottom: 35px; /*20*/
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
     transition: filter 0.3s ease;
 }

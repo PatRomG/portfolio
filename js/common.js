@@ -208,6 +208,7 @@ document.addEventListener("DOMContentLoaded", function() {
         { title: "Dance Mashup from The Grinch Saves Christmas", file: "../music/Dance Mashup from The Grinch Saves Christmas.wav" },
         { title: "Double Take (Duet) (Down One Version)", file: "../music/Double Take (Duet) (Down One Version).wav" },
         { title: "Double Take (Duet)", file: "../music/Double Take (Duet).wav" },
+        { title: "Hello Future x Broken Melodies - NCT Dream (Mashup)", file: "../music/Hello Future x Broken Melodies - NCT Dream (Mashup).wav" },
         { title: "Lost Through Time", file: "../music/Lost Through Time.wav" },
         { title: "Timeless Project - Relojes de Muñeca", file: "../music/RELOJES DE MUÑECA.wav" },
         { title: "Sleepwalking", file: "../music/Sleepwalking.wav" },
