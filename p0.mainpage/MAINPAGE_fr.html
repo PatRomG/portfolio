@@ -91,9 +91,40 @@ Page Principale
     <!-- FOOTER: Barra inferior tipo sistema operativo -->
     <footer class="system-footer">
         <div class="footer-content">
-            <!-- Logo izquierda -->
+            <!-- Logo izquierda + desplegable de perfiles artísticos -->
             <div class="footer-left">
-                <img id="logo" src="../photos/loto.png" alt="Logo" class="footer-logo">
+                <div class="logo-wrapper" id="logo-wrapper">
+                    <!-- Tooltip hint -->
+                    <div class="logo-tooltip" id="logo-tooltip">À qui recherchez-vous aujourd'hui?</div>
+                    <!-- Flecha indicadora -->
+                    <span class="logo-arrow" id="logo-arrow">▲</span>
+                    <!-- Logo clickable -->
+                    <img id="logo" src="../photos/loto.png" alt="Logo" class="footer-logo">
+                    <!-- Menú de perfiles artísticos -->
+                    <div id="artist-menu" class="artist-dropdown">
+                        <a class="artist-btn" href="https://www.instagram.com/alotof_time?igsh=dTJxNnJ1OXVmbmE1" target="_blank" rel="noopener">
+                            <span class="artist-icon"><img src="../photos/loto.png" alt="Loto"></span>
+                            <div class="artist-info">
+                                <span class="artist-name">Loto</span>
+                                <span class="artist-role">Artiste</span>
+                            </div>
+                        </a>
+                        <!-- <a class="artist-btn" href="https://open.spotify.com/artist/" target="_blank" rel="noopener">
+                            <span class="artist-icon">◎</span>
+                            <div class="artist-info">
+                                <span class="artist-name">PuntoZero</span>
+                                <span class="artist-role">Productrice</span>
+                            </div>
+                        </a> -->
+                        <a class="artist-btn" href="https://www.youtube.com/@AutumnSerenade-a4u" target="_blank" rel="noopener">
+                            <span class="artist-icon"><img src="../photos/autumn_serenade.png" alt="Autumn Serenade"></span>
+                            <div class="artist-info">
+                                <span class="artist-name">Autumn Serenade</span>
+                                <span class="artist-role">Compte de Mashup</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <!-- Iconos de navegación centro-izquierda -->
