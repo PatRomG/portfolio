@@ -203,6 +203,219 @@
     transform: scale(1.5);
 }
 
+/* ============================================
+   ARTIST PROFILES DROPDOWN (footer logo)
+   ============================================ */
+
+.logo-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Flecha indicadora sobre el logo */
+.logo-arrow {
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: var(--accent-color);
+    opacity: 0.8;
+    animation: bounceArrow 2s ease-in-out infinite;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+/* Mostrar flecha solo si el tooltip no ha sido descartado 
+.logo-wrapper:not(.tooltip-seen) .logo-arrow {
+    opacity: 0.8;
+}*/
+
+@keyframes bounceArrow {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%       { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* Tooltip flotante "¿A quién buscas hoy?" */
+.logo-tooltip {
+    position: absolute;
+    bottom: calc(100% + 30px);
+    left: 0;
+    background: var(--dropdown-bg);
+    border: 2px solid var(--dropdown-border);
+    border-radius: var(--border-radius);
+    padding: 8px 14px;
+    white-space: nowrap;
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+    color: var(--text-color);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    pointer-events: none;
+    z-index: 1200;
+
+    /* Aparece solo al inicio, se va después */
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* La punta del tooltip */
+.logo-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    border: 6px solid transparent;
+    border-top-color: var(--dropdown-border);
+}
+
+.logo-wrapper:hover .logo-tooltip,
+.logo-wrapper.tooltip-visible .logo-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ocultar tooltip cuando el menú está abierto (ya no hace falta el aviso) */
+.logo-wrapper.menu-open .logo-tooltip {
+    opacity: 0;
+}
+
+/* Dropdown de artistas */
+.artist-dropdown {
+    position: absolute;
+    bottom: calc(100% + 15px);
+    left: 0;
+    background: var(--dropdown-bg);
+    border: 2px solid var(--dropdown-border);
+    border-radius: var(--border-radius);
+    padding: 8px;
+    min-width: 200px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    z-index: 1100;
+
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity var(--transition-speed) ease,
+                visibility var(--transition-speed) ease,
+                transform var(--transition-speed) ease;
+}
+
+.artist-dropdown.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* Contenedor de cada perfil (ya no es un único <a>) */
+.artist-item {
+    padding: 10px 12px;
+    border-radius: 6px;
+    transition: background var(--transition-speed) ease;
+}
+
+.artist-item:hover {
+    background: var(--accent-color);
+}
+
+.artist-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+/* Fila de iconos de redes sociales */
+.artist-socials {
+    display: flex;
+    gap: 10px;
+    padding-left: 40px; /* alinea con artist-info, tras el icono de 28px + gap */
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    opacity: 0.75;
+    transition: opacity var(--transition-speed) ease, transform 0.2s ease;
+}
+
+.social-icon:hover {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+/* Botones de artista 
+.artist-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    text-decoration: none;
+    color: var(--text-color);
+    border-radius: 6px;
+    transition: background var(--transition-speed) ease,
+                transform 0.2s ease;
+    width: 100%;
+}
+
+.artist-btn:hover {
+    background: var(--accent-color);
+    transform: translateX(4px);
+}*/
+
+/* style the wrapper of the image */
+.artist-icon { 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    overflow: hidden;
+}
+ /*style the image inside the wrapper */
+.artist-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.artist-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.artist-name {
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    line-height: 1.1;
+}
+
+.artist-role {
+    font-family: 'Nova Square', sans-serif;
+    font-size: 10px;
+    opacity: 0.65;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Pulso sutil en el logo para indicar interactividad */
+.footer-logo.hint-pulse {
+    animation: logoPulse 3s ease-in-out 2;
+}
+
+@keyframes logoPulse {
+    0%, 100% { filter: drop-shadow(0 0 0px transparent); }
+    50%       { filter: drop-shadow(0 0 8px var(--accent-color)); }
+}
+
 /* FOOTER - NAVEGACIÓN */
 .footer-nav {
     display: flex;

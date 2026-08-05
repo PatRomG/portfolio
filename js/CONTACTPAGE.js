@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const messageInput = document.getElementById("message");
             const submitButton = document.querySelector("button[type='submit']");
 
+            /* no hace falta, hay required en el HTML
             // Validación básica
             if (!nameInput.value.trim()) {
                 alert("Please enter your name.");
@@ -81,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 alert("Please enter a message.");
                 messageInput.focus();
                 return;
-            }
+            }*/
 
 
             // Cambiar estado del botón
@@ -192,6 +193,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 successDiv.style.opacity = '1';
                 successDiv.style.transform = 'translateY(0)';
             }, 10);
+
+            // Cerrar el mensaje de éxito al hacer click (dentro de función porque const successDiv está definido aquí)
+            successDiv.addEventListener('click', function() {
+                this.style.opacity = '0';
+                setTimeout(() => this.remove(), 300);
+            });
             
             // Remover después de 8 segundos
             setTimeout(() => {
@@ -202,11 +209,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Cerrar el mensaje de éxito al hacer click
-    successDiv.addEventListener('click', function() {
-        this.style.opacity = '0';
-        setTimeout(() => this.remove(), 300);
-    });
+    
 
 
     // ============================================

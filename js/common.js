@@ -139,6 +139,53 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // ============================================
+    // ARTIST PROFILES DROPDOWN
+    // ============================================
+ 
+    const logoWrapper = document.getElementById("logo-wrapper");
+    const artistMenu  = document.getElementById("artist-menu");
+    const logo        = document.getElementById("logo");
+ 
+    if (logoWrapper && artistMenu && logo) {
+ 
+        // Mostrar tooltip brevemente al cargar
+        logoWrapper.classList.add('tooltip-visible');
+        // Pulso suave en el logo
+        logo.classList.add('hint-pulse');
+        logo.addEventListener('animationend', () => logo.classList.remove('hint-pulse'), { once: true });
+ 
+        // Ocultar tooltip a los 4 segundos si no interactúa
+        setTimeout(() => {
+            if (!logoWrapper.classList.contains('menu-open')) {
+                logoWrapper.classList.remove('tooltip-visible');
+            }
+        }, 4000);
+ 
+        // Toggle del menú al hacer click en el logo-wrapper
+        logoWrapper.addEventListener("click", function(e) {
+            e.stopPropagation();
+            const isOpen = artistMenu.classList.contains('active');
+ 
+            if (isOpen) {
+                artistMenu.classList.remove('active');
+                logoWrapper.classList.remove('menu-open');
+            } else {
+                artistMenu.classList.add('active');
+                logoWrapper.classList.add('menu-open');
+                logoWrapper.classList.remove('tooltip-visible');
+                logoWrapper.classList.add('tooltip-seen');
+            }
+        });
+ 
+        // Cerrar al hacer click fuera
+        document.addEventListener("click", function(event) {
+            if (!logoWrapper.contains(event.target)) {
+                artistMenu.classList.remove('active');
+                logoWrapper.classList.remove('menu-open');
+            }
+        });
+    }
 
     // ============================================
     // LINKEDIN
