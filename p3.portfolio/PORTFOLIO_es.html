@@ -67,11 +67,12 @@ Página proyectos
     </nav>
 
 
-    <!-- TO-DO LIST STICKY NOTE -->
-    <div class="todo-note">
+    <!-- TO-DO LIST TOGGLE + STICKY NOTE -->
+    <button id="todo-toggle" class="todo-toggle" aria-expanded="false" aria-controls="todo-note" aria-label="Show to-do list">📌</button>
+    
+    <div class="todo-note" id="todo-note" hidden>
         <h3>Lista de tareas</h3>
         <ul>
-            <li>✓ Portfolio web</li>
             <li>○ Animación del logo</li>
             <li>○ Motion graphics</li>
             <li>○ Música</li>

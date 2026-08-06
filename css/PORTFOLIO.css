@@ -217,12 +217,48 @@ main {
 }
 
 
+/* TO-DO LIST TOGGLE (BOTÓN FLOTANTE) */
+
+.todo-toggle {
+    position: fixed;
+    top: 80px; /*85*/
+    right: 28px; /*25*/
+    width: 46px;
+    height: 46px;
+    border: 2px solid var(--dropdown-border);
+    border-radius: 50%;
+    background: var(--dropdown-bg);
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 950;
+    transition: transform 0.2s ease, background var(--transition-speed) ease;
+}
+
+.todo-toggle:hover {
+    transform: scale(1.1);
+    background: var(--accent-color);
+}
+
+.todo-toggle:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+.todo-toggle.active {
+    background: var(--accent-color);
+}
+
+
 /* TO-DO LIST (STICKY NOTE) */
 
 .todo-note {
     position: fixed;
-    top: 50px;
-    right: 70px;
+    top: 100px; /*140/50px*/
+    right: 25px; /*70px*/
     width: 200px;
     background: #FFF9C4;
     padding: 20px;
@@ -230,6 +266,23 @@ main {
     transform: rotate(2deg);
     z-index: 950;
     font-family: 'Just Me Again Down Here', cursive;
+
+    animation: popIn 0.25s ease;
+}
+
+.todo-note[hidden] {
+    display: none;
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: rotate(2deg) scale(0.85) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(2deg) scale(1) translateY(0);
+    }
 }
 
 :root.dark-theme .todo-note {
@@ -276,11 +329,6 @@ main {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 25px;
     }
-
-    .todo-note {
-        width: 180px;
-        padding: 15px;
-    }
 }
 
 @media (max-width: 968px) {
@@ -291,10 +339,6 @@ main {
     .projects-container {
         margin-top: 110px;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    }
-
-    .todo-note {
-        display: none;
     }
 }
 

@@ -125,6 +125,51 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     // ============================================
+    // TO-DO LIST TOGGLE
+    // ============================================
+
+    const todoToggle = document.getElementById("todo-toggle");
+    const todoNote = document.getElementById("todo-note");
+
+    if (todoToggle && todoNote) {
+
+        function openTodoNote() {
+            todoNote.hidden = false;
+            todoToggle.classList.add('active');
+            todoToggle.setAttribute('aria-expanded', 'true');
+            todoToggle.setAttribute('aria-label', 'Hide to-do list');
+        }
+
+        function closeTodoNote() {
+            todoNote.hidden = true;
+            todoToggle.classList.remove('active');
+            todoToggle.setAttribute('aria-expanded', 'false');
+            todoToggle.setAttribute('aria-label', 'Show to-do list');
+        }
+
+        todoToggle.addEventListener("click", function(e) {
+            e.stopPropagation();
+            todoNote.hidden ? openTodoNote() : closeTodoNote();
+        });
+
+        // Cerrar con Escape
+        todoNote.addEventListener("keydown", function(e) {
+            if (e.key === "Escape") {
+                closeTodoNote();
+                todoToggle.focus();
+            }
+        });
+
+        // Cerrar al hacer click fuera
+        document.addEventListener("click", function(event) {
+            if (!todoNote.contains(event.target) && event.target !== todoToggle) {
+                closeTodoNote();
+            }
+        });
+    }
+
+
+    // ============================================
     // SCROLL ANIMATIONS
     // ============================================
 
