@@ -161,28 +161,45 @@ document.addEventListener("DOMContentLoaded", function() {
                 logoWrapper.classList.remove('tooltip-visible');
             }
         }, 4000);
+
+        function openArtistMenu() {
+            artistMenu.classList.add('active');
+            logoWrapper.classList.add('menu-open');
+            logoWrapper.classList.remove('tooltip-visible');
+            logoWrapper.classList.add('tooltip-seen');
+            logoWrapper.setAttribute('aria-expanded', 'true');
+        }
+
+        function closeArtistMenu() {
+            artistMenu.classList.remove('active');
+            logoWrapper.classList.remove('menu-open');
+            logoWrapper.setAttribute('aria-expanded', 'false');
+        }
  
         // Toggle del menú al hacer click en el logo-wrapper
         logoWrapper.addEventListener("click", function(e) {
             e.stopPropagation();
             const isOpen = artistMenu.classList.contains('active');
- 
-            if (isOpen) {
-                artistMenu.classList.remove('active');
-                logoWrapper.classList.remove('menu-open');
-            } else {
-                artistMenu.classList.add('active');
-                logoWrapper.classList.add('menu-open');
-                logoWrapper.classList.remove('tooltip-visible');
-                logoWrapper.classList.add('tooltip-seen');
+            isOpen ? closeArtisrtMenu() : openArtistMenu();
+        });
+
+        // Soporte de teclado: Enter / Espacio abren o cierran; Escape cierra
+        logoWrapper.addEventListener("keydown", function(e) {
+            if (e.key === "Enter" || e.key === " " || e.key === "Spacebar") {
+                e.preventDefault(); // Evita el scroll de página con Espacio
+                e.stopPropagation();
+                const isOpen = artistMenu.classList.contains('active');
+                isOpen ? closeArtistMenu() : openArtistMenu();
+            } else if (e.key === "Escape") {
+                closeArtistMenu();
+                logoWrapper.focus();
             }
         });
  
         // Cerrar al hacer click fuera
         document.addEventListener("click", function(event) {
             if (!logoWrapper.contains(event.target)) {
-                artistMenu.classList.remove('active');
-                logoWrapper.classList.remove('menu-open');
+                closeArtistMenu();
             }
         });
     }

@@ -64,15 +64,15 @@ About Me Page
             <p>I've always been interested in multimedia and its technologic innovations. I've participated in several projects during my bachelor's degree, from media editor roles to app programing or web development.<br><br> I consider myself a responsible, hardworking and assertive person, always looking for improvement and a reason to learn.<br><br> Apart from doing pretty crazy hairstyles, I enjoy reading a good novel, learning a new language or finding a new artist to be obsessed with. Most of the times, you'll find me with my headphones on!</p>
         </section>
 
-        <section>
-            <h2>MY SKILLS</h2>
-            <h2>MY PROFESSIONAL EXPERIENCE</h2>
-            <h2>MY STUDIES</h2>
-            <h2>ADDITIONAL INFO</h2>
+        <section role="tablist" aria-label="About me sections">
+            <h2 role="tab" id="tab-skills" aria-selected="true" aria-controls="my-skills" tabindex="0">MY SKILLS</h2>
+            <h2 role="tab" id="tab-experience" aria-selected="false" aria-controls="my-professional-experience" tabindex="-1">MY PROFESSIONAL EXPERIENCE</h2>
+            <h2 role="tab" id="tab-studies" aria-selected="false" aria-controls="my-studies" tabindex="-1">MY STUDIES</h2>
+            <h2 role="tab" id="tab-additional" aria-selected="false" aria-controls="additional-info" tabindex="-1">ADDITIONAL INFO</h2>
         </section>
 
         <!-- Below are the sections that will be shown/hidden based on the selected h2. My skills is the default. -->
-        <section id="my-skills">
+        <section id="my-skills" role="tabpanel" aria-labelledby="tab-skills">
             <div class="skill-group">
                 <h3>SOCIAL MEDIA MANAGEMENT</h3>
                 <ul>
@@ -103,7 +103,7 @@ About Me Page
             </div>
         </section>
 
-        <section id="my-professional-experience" style="display:none;">
+        <section id="my-professional-experience" role="tabpanel" aria-labelledby="tab-experience" style="display:none;">
             <p class="bold">Private Tutor</p>
             <p class="medium-italic">Self-employed</p>
             <p class="regular">Knowledge reinforcement according to the student's level.<br> Adaptation of study techniques.<br> Subjects such as English and Mathematics. Flute.</p>
@@ -120,7 +120,7 @@ About Me Page
             <p class="extralight">June - October 2022</p>
         </section>
 
-         <section id="my-studies" style="display:none;">
+         <section id="my-studies" role="tabpanel" aria-labelledby="tab-studies" style="display:none;">
             <p class="bold">Master's Degree in Social Media: Management and Strategy</p>
             <p class="medium-italic">Universitat Oberta de Catalunya <span class="extralight">[October 2026-June 2027]</span></p><br><br>
 
@@ -147,7 +147,7 @@ About Me Page
             <p class="bold">Leisure Activies Instructor<span class="extralight">[2020]</span></p>
         </section>
 
-         <section id="additional-info" style="display:none;">
+         <section id="additional-info" role="tabpanel" aria-labelledby="tab-additional"style="display:none;">
             <div>
                 <p class="regular">Type B driver's license.</p>
                 <p class="medium">2025</p>
@@ -174,9 +174,85 @@ About Me Page
     <!-- FOOTER: Barra inferior tipo sistema operativo -->
     <footer class="system-footer">
         <div class="footer-content">
-            <!-- Logo izquierda -->
+
+            <!-- Logo izquierda + desplegable de perfiles artísticos -->
             <div class="footer-left">
-                <img id="logo" src="../photos/loto.png" alt="Logo" class="footer-logo">
+                <div class="logo-wrapper" id="logo-wrapper" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Who are you looking for today?">
+
+                    <!-- Tooltip hint -->
+                    <div class="logo-tooltip" id="logo-tooltip">Who are you looking for today?</div>
+                    <span class="logo-arrow" id="logo-arrow">▲</span>
+
+                    <!-- Logo clickable -->
+                    <img id="logo" src="../photos/loto.png" alt="Logo" class="footer-logo">
+
+                    <!-- Menú de perfiles artísticos -->
+                    <div id="artist-menu" class="artist-dropdown">
+
+                        <!-- LOTO -->
+                        <div class="artist-item">
+                            <div class="artist-header">
+                                <span class="artist-icon"><img src="../photos/loto.png" alt="Loto"></span>
+                                <div class="artist-info">
+                                    <span class="artist-name">Loto</span>
+                                    <span class="artist-role">Artist</span>
+                                </div>
+                            </div>
+                            <div class="artist-socials">
+                                <a href="https://www.instagram.com/alotof_time?igsh=dTJxNnJ1OXVmbmE1" target="_blank" rel="noopener" aria-label="Loto on Instagram">
+                                    <img src="../icons/instagram.svg" alt="" class="social-icon">
+                                </a>
+                                <a href="https://twitter.com/ALotof_time" target="_blank" rel="noopener" aria-label="Loto on Twitter">
+                                    <img src="../icons/twitter.svg" alt="" class="social-icon">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- PUNTOZERO (pendiente de enlace) -->
+                        <!--
+                        <div class="artist-item">
+                            <div class="artist-header">
+                                <span class="artist-icon">◎</span>
+                                <div class="artist-info">
+                                    <span class="artist-name">PuntoZero</span>
+                                    <span class="artist-role">Producer</span>
+                                </div>
+                            </div>
+                            <div class="artist-socials">
+                                <a href="https://open.spotify.com/artist/..." target="_blank" rel="noopener" aria-label="PuntoZero on Spotify">
+                                    <img src="../icons/spotify.svg" alt="" class="social-icon">
+                                </a>
+                            </div>
+                        </div>
+                        -->
+
+                        <!-- AUTUMN SERENADE -->
+                        <div class="artist-item">
+                            <div class="artist-header">
+                                <span class="artist-icon"><img src="../photos/autumn_serenade.png" alt="Autumn Serenade"></span>
+                                <div class="artist-info">
+                                    <span class="artist-name">Autumn Serenade</span>
+                                    <span class="artist-role">Mashup Account</span>
+                                </div>
+                            </div>
+                            <div class="artist-socials">
+                                <a href="https://www.youtube.com/@AutumnSerenade-a4u" target="_blank" rel="noopener" aria-label="Autumn Serenade on YouTube">
+                                    <img src="../icons/youtube.svg" alt="" class="social-icon">
+                                </a>
+                                <a href="https://www.instagram.com/autumnserenade.a4u?igsh=M2IkNnkwdXNpdjFt" target="_blank" rel="noopener" aria-label="Autumn Serenade on Instagram">
+                                    <img src="../icons/instagram.svg" alt="" class="social-icon">
+                                </a>
+                                <a href="https://on.soundcloud.com/Epj911xN94h5yzRXBV" target="_blank" rel="noopener" aria-label="Autumn Serenade on SoundCloud">
+                                    <img src="../icons/soundcloud-blackonorange.webp" alt="" class="social-icon">
+                                </a>
+                                <a href="https://www.tiktok.com/@autumnserenade.a4u?_r=1&_t=ZN-98OA31JrZ1H" target="_blank" rel="noopener" aria-label="Autumn Serenade on TikTok">
+                                    <img src="../icons/tiktok.svg" alt="" class="social-icon">
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
             <!-- Iconos de navegación centro-izquierda -->

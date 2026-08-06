@@ -74,33 +74,57 @@ document.addEventListener("DOMContentLoaded", function() {
     // TAB NAVIGATION (MY SKILLS, STUDIES, etc.)
     // ============================================
 
-    const tabHeaders = document.querySelectorAll('main > section:nth-of-type(2) h2');
-    const tabSections = document.querySelectorAll('main > section[id]');
+    const tabHeaders = document.querySelectorAll('[role="tab"]');
+    const tabSections = document.querySelectorAll('[role="tabpanel"]');
 
     if (tabHeaders.length > 0 && tabSections.length > 0) {
+        
         // Función para cambiar entre tabs
         function switchTab(index) {
-            // Remover clase active de todos los headers
-            tabHeaders.forEach(header => header.classList.remove('active'));
-            
-            // Añadir clase active al header seleccionado
-            tabHeaders[index].classList.add('active');
-            
-            // Ocultar todas las secciones
-            tabSections.forEach(section => {
-                section.style.display = 'none';
+            tabHeaders.forEach((header, i) => {
+                const isSelected = i === index;
+                header.classList.toggle('active', isSelected);
+
+                //Activa o no, el aria-selected y tabindex según si es la tab seleccionada
+                header.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+                header.setAttribute('tabindex', isSelected ? '0' : '-1');
             });
-            
-            // Mostrar la sección seleccionada
-            if (tabSections[index]) {
-                tabSections[index].style.display = 'block';
-            }
+
+            tabSections.forEach((section, i) => {
+                section.style.display = i === index ? 'block' : 'none';
+            });
         }
 
-        // Añadir event listeners a cada header
         tabHeaders.forEach((header, index) => {
+            // Click con ratón
             header.addEventListener('click', function() {
                 switchTab(index);
+                header.focus();
+            });
+
+            // Navegación por teclado
+            header.addEventListener('keydown', function(e) {
+                let newIndex = null;
+
+                if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+                    newIndex = (index + 1) % tabHeaders.length;
+                } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+                    newIndex = (index - 1 + tabHeaders.length) % tabHeaders.length;
+                } else if (e.key === "Home") {
+                    newIndex = 0;
+                } else if (e.key === "End") {
+                    newIndex = tabHeaders.length - 1;
+                } else if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    switchTab(index);
+                    return;
+                }
+
+                if (newIndex !== null) {
+                    e.preventDefault();
+                    switchTab(newIndex);
+                    tabHeaders[newIndex].focus();
+                }
             });
         });
 

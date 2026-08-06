@@ -96,6 +96,11 @@ main > section:nth-of-type(2) h2:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+main > section:nth-of-type(2) h2:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
 main > section:nth-of-type(2) h2.active {
     background: var(--accent-color);
     font-weight: bold;
