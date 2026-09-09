@@ -115,6 +115,118 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     // ============================================
+    // IMAGE LIGHTBOX AND GALLERIES
+    // ============================================
+
+    const imageThumbnails = Array.from(document.querySelectorAll('.project-thumbnail'))
+        .map(thumbnail => ({
+            thumbnail,
+            images: Array.from(thumbnail.querySelectorAll(':scope > img'))
+        }))
+        .filter(gallery => gallery.images.length > 0);
+
+    if (imageThumbnails.length > 0) {
+        const lightbox = document.createElement('div');
+        lightbox.className = 'image-lightbox';
+        lightbox.setAttribute('role', 'dialog');
+        lightbox.setAttribute('aria-modal', 'true');
+        lightbox.setAttribute('aria-label', 'Image viewer');
+        lightbox.hidden = true;
+        lightbox.innerHTML = `
+            <button class="lightbox-close" type="button" aria-label="Close image viewer">&times;</button>
+            <button class="lightbox-arrow lightbox-previous" type="button" aria-label="Previous image">&#10094;</button>
+            <figure class="lightbox-content">
+                <img class="lightbox-image" alt="">
+                <figcaption class="lightbox-counter"></figcaption>
+            </figure>
+            <button class="lightbox-arrow lightbox-next" type="button" aria-label="Next image">&#10095;</button>
+        `;
+        document.body.appendChild(lightbox);
+
+        const lightboxImage = lightbox.querySelector('.lightbox-image');
+        const lightboxCounter = lightbox.querySelector('.lightbox-counter');
+        const closeButton = lightbox.querySelector('.lightbox-close');
+        const previousButton = lightbox.querySelector('.lightbox-previous');
+        const nextButton = lightbox.querySelector('.lightbox-next');
+        let activeGallery;
+        let activeIndex = 0;
+        let lastFocusedElement;
+
+        function renderLightboxImage() {
+            const image = activeGallery.images[activeIndex];
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt;
+            lightboxCounter.textContent = activeGallery.images.length > 1
+                ? `${activeIndex + 1} / ${activeGallery.images.length}`
+                : '';
+            const hasMultipleImages = activeGallery.images.length > 1;
+            previousButton.hidden = !hasMultipleImages;
+            nextButton.hidden = !hasMultipleImages;
+        }
+
+        function openLightbox(gallery, index) {
+            activeGallery = gallery;
+            activeIndex = index;
+            lastFocusedElement = document.activeElement;
+            renderLightboxImage();
+            lightbox.hidden = false;
+            document.body.classList.add('lightbox-open');
+            closeButton.focus();
+        }
+
+        function closeLightbox() {
+            lightbox.hidden = true;
+            document.body.classList.remove('lightbox-open');
+            if (lastFocusedElement) {
+                lastFocusedElement.focus();
+            }
+        }
+
+        function showAdjacentImage(direction) {
+            activeIndex = (activeIndex + direction + activeGallery.images.length) % activeGallery.images.length;
+            renderLightboxImage();
+        }
+
+        imageThumbnails.forEach(gallery => {
+            gallery.images.forEach((image, index) => {
+                image.classList.add('gallery-image');
+                image.setAttribute('tabindex', '0');
+                image.setAttribute('role', 'button');
+                image.setAttribute('aria-label', `View ${image.alt || 'image'} full size`);
+                image.addEventListener('click', () => openLightbox(gallery, index));
+                image.addEventListener('keydown', event => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        openLightbox(gallery, index);
+                    }
+                });
+            });
+        });
+
+        closeButton.addEventListener('click', closeLightbox);
+        previousButton.addEventListener('click', () => showAdjacentImage(-1));
+        nextButton.addEventListener('click', () => showAdjacentImage(1));
+        lightbox.addEventListener('click', event => {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+        document.addEventListener('keydown', event => {
+            if (lightbox.hidden) {
+                return;
+            }
+            if (event.key === 'Escape') {
+                closeLightbox();
+            } else if (event.key === 'ArrowLeft' && activeGallery.images.length > 1) {
+                showAdjacentImage(-1);
+            } else if (event.key === 'ArrowRight' && activeGallery.images.length > 1) {
+                showAdjacentImage(1);
+            }
+        });
+    }
+
+
+    // ============================================
     // FOOTER NAVIGATION ACTIVE STATE
     // ============================================
 
